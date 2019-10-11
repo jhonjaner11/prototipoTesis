@@ -1,0 +1,35 @@
+Para el funcionamiento del script de zoneminder.sh, se necesita instalar:
+
+Apache, mysql-server, mysql.common
+
+Paso 1 — Instalar Apache
+
+Apache se encuentra disponible dentro de los repositorios de software predeterminados de Ubuntu, haciendo posible la instalación mediante las herramientas convencionales de administración de paquetes.
+
+Empezaremos por actualizar el índice de los paquetes locales. Esto, para garantizar que en él se refleje las cargas más recientes de las nuevas versiones de los paquetes.
+
+    sudo apt update
+
+A continuación, instala el paquete apache2:
+
+    sudo apt install apache2
+
+    
+Paso 2 — Instalar MySQL
+
+sudo apt install mysql-server mysql-common
+
+
+Luego ejecutar zoneminder.sh y en otra pestaña ejecutar  cuando ya se este ejecutando el anterior
+
+sudo tail -f /var/log/zoneminder.sh para ir observando el estado de la instalacion
+
+
+
+Manual:
+
+edicion de archivo de configuracion de mysql
+
+agregar:
+
+sql_mode = NO_ENGINE_SUBSTITUTION
