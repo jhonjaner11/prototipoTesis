@@ -14,16 +14,39 @@ A continuación, instala el paquete apache2:
 
     sudo apt install apache2
 
-    
+
 Paso 2 — Instalar MySQL
 
 sudo apt install mysql-server mysql-common
+
+
+Para instalar PHP 7.2 en Ubuntu y Debian hemos de hacer uso de un repositorio externo e instalar dependencias que se necesita para la instalación y ejecución de esta nueva versión de PHP. Para ello abrimos la terminal y escribimos lo siguiente:
+
+apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+
+Luego escribimos lo siguiente para instalar PHP 7.2:
+
+apt-get update
+sudo apt-get install php7.2
+
+Esto instalará la versión de PHP 7.2 pero no hará que el sistema operativo lo utilice por defecto. Para hacer esto, hemos de escribir lo siguiente en la terminal:
+
+update-alternatives --set php /usr/bin/php7.2
+
+Y si utilizamos un servidor LAMP, tendremos que hacer modificaciones en Apache para que reconozca esta versión. Para ello hemos de escribir lo siguiente en la terminal:
 
 
 Luego ejecutar zoneminder.sh y en otra pestaña ejecutar  cuando ya se este ejecutando el anterior
 
 sudo tail -f /var/log/zoneminder.sh para ir observando el estado de la instalacion
 
+tener lamp instalado: https://www.solvetic.com/tutoriales/article/5609-como-instalar-lamp-phpmyadmin-en-ubuntu-18-04/
+
+hubo un error y toca instalar esto:
+
+sudo apt-get install phpmyadmin php-mbstring php-gettext
+sudo service apache2 restart
 
 
 Manual:
